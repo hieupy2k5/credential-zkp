@@ -1,0 +1,28 @@
+{
+    "name": "credential-zkp",
+    "version": "1.0.0",
+    "description": "Private Credential Verification using ZKP (Circom + Groth16)",
+    "main": "index.js",
+    "scripts": {
+        "build": "circom circuits/credential.circom --r1cs --wasm --sym -l node_modules",
+        "witness": "node credential_js/generate_witness.js credential_js/credential.wasm input.json witness.wtns",
+        "prove": "snarkjs groth16 prove credential.zkey witness.wtns proof.json public.json",
+        "verify": "snarkjs groth16 verify verification_key.json public.json proof.json",
+        "input": "node scripts/generate_input.js",
+        "full": "npm run input && npm run build && npm run witness && npm run prove && npm run verify"
+    },
+    "keywords": [
+        "zkp",
+        "circom",
+        "snarkjs",
+        "poseidon",
+        "zero-knowledge"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "big-integer": "^1.6.51",
+        "circomlib": "^2.0.5",
+        "circomlibjs": "^0.1.7"
+    }
+}

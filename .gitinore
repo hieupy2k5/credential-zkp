@@ -1,0 +1,9 @@
+node_modules/
+*.ptau
+*.zkey
+*.wtns
+*.r1cs
+*.sym
+credential_js/
+proof.json
+public.json
