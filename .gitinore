@@ -1,5 +1,3 @@
-node_modules/
-*.ptau
 *.zkey
 *.wtns
 *.r1cs
@@ -7,3 +5,4 @@ node_modules/
 credential_js/
 proof.json
 public.json
+verification_key.json
